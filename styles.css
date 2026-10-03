@@ -18,7 +18,7 @@
   --border-white-5: rgba(255, 255, 255, 0.05);
   --border-white-10: rgba(255, 255, 255, 0.1);
   --border-white-20: rgba(255, 255, 255, 0.2);
-  --border-accent: rgba(255, 77, 0, 0.3);
+  --border-accent: rgba(255, 77, 0, 0.35);
   
   --font-main: 'Montserrat', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -26,7 +26,7 @@
   --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Reset & Base */
+/* Reset & Base Setup */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -92,7 +92,7 @@ img, video {
 }
 
 /* ==========================================================
-   BUTTONS (Elite Cult Style)
+   BUTTONS (Cult Agency Design - Dark Theme)
    ========================================================== */
 .btn-cult {
   display: inline-flex;
@@ -150,7 +150,7 @@ img, video {
 }
 
 /* ==========================================================
-   SITE HEADER & NAVIGATION
+   SITE HEADER & NAVIGATION (Unobstructed & Clean)
    ========================================================== */
 .site-header {
   position: fixed;
@@ -162,13 +162,15 @@ img, video {
   transition: var(--transition-smooth);
   display: flex;
   align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-white-5);
 }
 
 .site-header.scrolled {
   height: 72px;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.92);
   border-bottom: 1px solid var(--border-white-10);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
@@ -203,7 +205,7 @@ img, video {
 }
 
 .brand-title {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 900;
   letter-spacing: -0.02em;
   color: #fff;
@@ -238,7 +240,7 @@ img, video {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.55);
   transition: color 0.2s ease;
   position: relative;
   padding: 0.4rem 0;
@@ -262,12 +264,6 @@ img, video {
 
 .nav-link:hover::after, .nav-link.active::after {
   width: 100%;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 /* Mobile Toggle & Drawer */
@@ -362,7 +358,7 @@ img, video {
 }
 
 /* ==========================================================
-   HERO SECTION (Exact Fit Garage Video & Lighting Style)
+   HERO SECTION (Cinematic Video Motion & Lighting)
    ========================================================== */
 .hero-section {
   position: relative;
@@ -654,7 +650,7 @@ img, video {
 
 @media (min-width: 1024px) {
   .philosophy-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 6rem;
   }
 }
