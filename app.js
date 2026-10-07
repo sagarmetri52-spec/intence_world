@@ -169,7 +169,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 8. Branch Filter Tabs (All / Chikkaballapur / Shidlaghatta)
+  // 8. Package Plan Tab Switcher (Strength vs Cardio)
+  const packageTabBtns = document.querySelectorAll('.package-tab-btn');
+  const packageGridStrength = document.getElementById('packageGridStrength');
+  const packageGridCardio = document.getElementById('packageGridCardio');
+
+  packageTabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      packageTabBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const tab = this.getAttribute('data-package-tab');
+
+      if (tab === 'strength') {
+        if (packageGridStrength) {
+          packageGridStrength.style.display = 'grid';
+          setTimeout(() => { packageGridStrength.style.opacity = '1'; }, 30);
+        }
+        if (packageGridCardio) {
+          packageGridCardio.style.opacity = '0';
+          packageGridCardio.style.display = 'none';
+        }
+      } else if (tab === 'cardio') {
+        if (packageGridCardio) {
+          packageGridCardio.style.display = 'grid';
+          setTimeout(() => { packageGridCardio.style.opacity = '1'; }, 30);
+        }
+        if (packageGridStrength) {
+          packageGridStrength.style.opacity = '0';
+          packageGridStrength.style.display = 'none';
+        }
+      }
+    });
+  });
+
+  // 9. Branch Filter Tabs (All / Chikkaballapur / Shidlaghatta)
   const branchTabBtns = document.querySelectorAll('.branch-tab-btn');
   const branchCards = document.querySelectorAll('.branch-card');
 
@@ -194,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 9. Real-Time Branch Open/Closed Live Status
+  // 10. Real-Time Branch Open/Closed Live Status Clock
   function updateLiveBranchStatus() {
     const now = new Date();
     const day = now.getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
@@ -205,26 +238,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const chikkaStatusEl = document.getElementById('chikkaLiveStatus');
     const shidStatusEl = document.getElementById('shidLiveStatus');
 
-    // Chikkaballapur (Open daily 5:00 AM - 10:00 PM)
+    // Chikkaballapur: Open daily 4:00 AM – 10:00 PM Continuously (4.0 to 22.0)
     if (chikkaStatusEl) {
-      if (currentTime >= 5 && currentTime < 22) {
+      if (currentTime >= 4 && currentTime < 22) {
         chikkaStatusEl.innerHTML = '<span class="status-indicator"></span> OPEN NOW • CLOSES 10:00 PM';
         chikkaStatusEl.style.color = 'var(--success)';
       } else {
-        chikkaStatusEl.innerHTML = '<span class="status-indicator" style="background: #ef4444; box-shadow: 0 0 8px #ef4444;"></span> CLOSED NOW • OPENS 5:00 AM';
+        chikkaStatusEl.innerHTML = '<span class="status-indicator" style="background: #ef4444; box-shadow: 0 0 8px #ef4444;"></span> CLOSED NOW • OPENS 4:00 AM';
         chikkaStatusEl.style.color = '#ef4444';
       }
     }
 
-    // Shidlaghatta (Mon-Sat 5:00 AM - 10:00 PM, Sunday Closed)
+    // Shidlaghatta: Mon–Sat 5:00 AM – 10:00 AM & 5:00 PM – 10:00 PM (Sunday Closed)
     if (shidStatusEl) {
       if (day === 0) { // Sunday
         shidStatusEl.innerHTML = '<span class="status-indicator" style="background: #ef4444; box-shadow: 0 0 8px #ef4444;"></span> CLOSED TODAY (SUNDAY) • OPENS MON 5 AM';
         shidStatusEl.style.color = '#ef4444';
-      } else if (currentTime >= 5 && currentTime < 22) {
-        shidStatusEl.innerHTML = '<span class="status-indicator"></span> OPEN NOW • CLOSES 10:00 PM';
+      } else if (currentTime >= 5 && currentTime < 10) {
+        // Morning Slot
+        shidStatusEl.innerHTML = '<span class="status-indicator"></span> OPEN NOW (MORNING) • CLOSES 10:00 AM';
+        shidStatusEl.style.color = 'var(--success)';
+      } else if (currentTime >= 10 && currentTime < 17) {
+        // Afternoon Break
+        shidStatusEl.innerHTML = '<span class="status-indicator" style="background: var(--gold); box-shadow: 0 0 8px var(--gold);"></span> AFTERNOON BREAK • OPENS 5:00 PM';
+        shidStatusEl.style.color = 'var(--gold)';
+      } else if (currentTime >= 17 && currentTime < 22) {
+        // Evening Slot
+        shidStatusEl.innerHTML = '<span class="status-indicator"></span> OPEN NOW (EVENING) • CLOSES 10:00 PM';
         shidStatusEl.style.color = 'var(--success)';
       } else {
+        // Night / Early Morning
         shidStatusEl.innerHTML = '<span class="status-indicator" style="background: #ef4444; box-shadow: 0 0 8px #ef4444;"></span> CLOSED NOW • OPENS 5:00 AM';
         shidStatusEl.style.color = '#ef4444';
       }
@@ -232,10 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   updateLiveBranchStatus();
-  setInterval(updateLiveBranchStatus, 60000); // Check every minute
+  setInterval(updateLiveBranchStatus, 60000); // Live refresh every minute
 });
 
-// 10. Interactive Goal Finder WhatsApp Submitter
+// 11. Interactive Goal Finder WhatsApp Submitter
 window.submitGoalFinder = function() {
   const goal = document.getElementById('userGoal')?.value || 'Strength & Conditioning';
   const branch = document.getElementById('preferredBranch')?.value || 'Chikkaballapur';

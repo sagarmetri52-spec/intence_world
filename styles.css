@@ -1025,20 +1025,110 @@ button {
 }
 
 /* ==========================================================================
-   PACKAGES & MEMBERSHIP PLANS SECTION (NEW)
+   PACKAGES & MEMBERSHIP PLANS SECTION
    ========================================================================== */
 .packages-section {
   padding: 7rem 0;
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
   position: relative;
+  overflow: hidden;
+}
+
+.packages-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 77, 0, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Admission Fee Banner */
+.admission-fee-banner {
+  margin: 1.75rem auto 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(255, 77, 0, 0.08);
+  border: 1px dashed var(--border-accent);
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  text-align: left;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.admission-fee-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.admission-fee-banner strong {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  display: block;
+}
+
+.admission-fee-banner span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: block;
+}
+
+/* Plan Switcher */
+.package-plan-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(18, 18, 18, 0.85);
+  border: 1px solid var(--border-medium);
+  padding: 0.4rem;
+  border-radius: var(--radius-full);
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  max-width: 100%;
+}
+
+.package-tab-btn {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.package-tab-btn:hover {
+  color: #FFFFFF;
+}
+
+.package-tab-btn.active {
+  background: var(--accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .packages-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.75rem;
-  margin-top: 3.5rem;
+  gap: 1.5rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 @media (min-width: 640px) {
@@ -1049,31 +1139,51 @@ button {
 
 @media (min-width: 1024px) {
   .packages-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .packages-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
   }
 }
 
 .package-card {
-  background: var(--bg-card);
+  background: rgba(18, 18, 18, 0.85);
   border: 1.5px solid var(--border-medium);
   border-radius: var(--radius-lg);
-  padding: 2.25rem 1.65rem;
+  padding: 2rem 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: var(--transition);
   position: relative;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .package-card:hover {
   border-color: var(--border-accent);
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-glow-subtle);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px var(--accent-glow-subtle);
+  background: rgba(24, 24, 24, 0.95);
 }
 
 .package-card.highlight-popular {
   border-color: var(--accent);
-  background: linear-gradient(180deg, rgba(255, 77, 0, 0.06) 0%, rgba(18, 18, 18, 1) 40%);
+  background: linear-gradient(180deg, rgba(255, 77, 0, 0.09) 0%, rgba(18, 18, 18, 0.95) 45%);
+}
+
+.package-card.package-card-couple {
+  border-color: rgba(225, 29, 72, 0.4);
+  background: linear-gradient(180deg, rgba(225, 29, 72, 0.08) 0%, rgba(18, 18, 18, 0.95) 45%);
+}
+
+.package-card.package-card-couple:hover {
+  border-color: #E11D48;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(225, 29, 72, 0.35);
 }
 
 .package-popular-badge {
@@ -1084,7 +1194,7 @@ button {
   background: var(--accent);
   color: #FFFFFF;
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   padding: 0.3rem 0.85rem;
@@ -1095,12 +1205,12 @@ button {
 }
 
 .package-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .package-duration {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--text-muted);
@@ -1108,30 +1218,60 @@ button {
 }
 
 .package-name {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-style: italic;
-  margin: 0.4rem 0 0.85rem;
+  margin: 0.35rem 0 0.75rem;
   color: #FFFFFF;
+  line-height: 1.15;
 }
 
 .package-price-wrap {
   display: flex;
-  align-items: baseline;
-  gap: 0.35rem;
+  flex-direction: column;
+  gap: 0.25rem;
   border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.price-strikethrough-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-strikethrough {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.package-discount-pill {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: rgba(255, 77, 0, 0.15);
+  border: 1px solid rgba(255, 77, 0, 0.3);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
 }
 
 .package-price {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 900;
   color: #FFFFFF;
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .package-period {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
@@ -1140,23 +1280,23 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  font-size: 0.86rem;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
 }
 
 .package-feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.55rem;
-  line-height: 1.4;
+  gap: 0.5rem;
+  line-height: 1.35;
 }
 
 .package-feature-item svg {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
   color: var(--accent);
   margin-top: 2px;
 }

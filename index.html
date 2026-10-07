@@ -65,12 +65,14 @@
           "ratingValue": "5.0",
           "reviewCount": "14"
         },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "05:00",
-          "closes": "22:00"
-        }
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "04:00",
+            "closes": "22:00"
+          }
+        ]
       },
       {
         "@type": "ExerciseGym",
@@ -97,12 +99,20 @@
           "ratingValue": "5.0",
           "reviewCount": "2"
         },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "05:00",
-          "closes": "22:00"
-        }
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "05:00",
+            "closes": "10:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "17:00",
+            "closes": "22:00"
+          }
+        ]
       }
     ]
   }
@@ -454,146 +464,187 @@
     </section>
 
     <!-- ==========================================================
-         PACKAGES & MEMBERSHIP PLANS SECTION (NEW)
+         PACKAGES & MEMBERSHIP PLANS SECTION
          ========================================================== -->
     <section class="packages-section" id="packages">
       <div class="container">
-        <div class="fade-in-up" style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div class="fade-in-up" style="text-align: center; max-width: 760px; margin: 0 auto;">
           <div class="hero-tag-pill" style="margin-bottom: 1rem;">
             <span class="pulse-dot"></span>
-            MEMBERSHIP TIERS & OFFERS
+            OFFICIAL MEMBERSHIP TIERS & OFFERS
           </div>
           <h2 class="facility-header-title">
-            MEMBERSHIP <br>
+            TRAINING <br>
             <span>PACKAGES.</span>
           </h2>
           <p class="facility-header-desc" style="margin: 0.75rem auto 0;">
-            Flexible plans designed for beginners to seasoned athletes. Transparent pricing with full gym access across both branches.
+            Transparent pricing with zero hidden costs. Choose your training discipline and membership tenure below.
           </p>
+
+          <!-- Admission Fee Notice Banner -->
+          <div class="admission-fee-banner">
+            <span class="admission-fee-icon">🏷️</span>
+            <div>
+              <strong>NEW JOINER ADMISSION FEE: ₹500/- ONLY</strong>
+              <span>(One-time registration applicable on new memberships)</span>
+            </div>
+          </div>
+
+          <!-- Package Category Selector Tabs -->
+          <div class="package-plan-switcher" role="tablist">
+            <button type="button" class="package-tab-btn active" id="tabBtnStrength" data-package-tab="strength">
+              💪 STRENGTH WORKOUT
+            </button>
+            <button type="button" class="package-tab-btn" id="tabBtnCardio" data-package-tab="cardio">
+              ⚡ CARDIO + STRENGTH
+            </button>
+          </div>
         </div>
 
-        <div class="packages-grid">
-          <!-- Package 1: Monthly Starter -->
+        <!-- ==========================================
+             TAB 1: STRENGTH WORKOUT PACKAGES
+             ========================================== -->
+        <div class="packages-grid package-tab-content active" id="packageGridStrength">
+          <!-- 1 Month Strength -->
           <div class="package-card fade-in-up">
             <div>
               <div class="package-header">
-                <span class="package-duration">1 MONTH PASS</span>
+                <span class="package-duration">1 MONTH PLAN</span>
                 <h3 class="package-name">STARTER</h3>
                 <div class="package-price-wrap">
-                  <span class="package-price">MONTHLY</span>
-                  <span class="package-period">/ flexible</span>
+                  <span class="package-price">₹1,000</span>
+                  <span class="package-period">/ month</span>
                 </div>
               </div>
 
               <ul class="package-features">
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Full Gym Floor & Machine Access</span>
+                  <span>Full Free Weight & Dumbbell Zone</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Free Weight & Cardio Zone</span>
+                  <span>Olympic Barbells & Power Racks</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Locker & Changing Room Facility</span>
+                  <span>Selectorized Weight Stack Machines</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>General Floor Coach Support</span>
+                  <span>Floor Trainer Guidance & Locker Access</span>
                 </li>
               </ul>
             </div>
 
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20the%201-Month%20Starter%20Package." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
-              ENQUIRE STARTER PASS
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%201-Month%20Strength%20Workout%20Plan%20(Rs.1000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              ENQUIRE 1-MONTH (₹1,000)
             </a>
           </div>
 
-          <!-- Package 2: Quarterly Power -->
+          <!-- 3 Months Strength (Popular) -->
+          <div class="package-card highlight-popular fade-in-up">
+            <span class="package-popular-badge">★ POPULAR CHOICE</span>
+            <div>
+              <div class="package-header">
+                <span class="package-duration">3 MONTHS PLAN</span>
+                <h3 class="package-name">POWER PACK</h3>
+                <div class="package-price-wrap">
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹3,000</span>
+                    <span class="package-discount-pill">SAVE ₹500</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹2,500</span>
+                    <span class="package-period">/ 3 months</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Complete Strength & Hypertrophy Equipment</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Custom Workout Split Routine</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Form Checks & Progressive Overload Tracking</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Locker & Changing Room Amenities</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%203-Months%20Strength%20Workout%20Plan%20(Rs.2500)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-primary" style="width: 100%;">
+              JOIN 3-MONTHS (₹2,500)
+            </a>
+          </div>
+
+          <!-- 6 Months Strength -->
           <div class="package-card fade-in-up">
             <div>
               <div class="package-header">
-                <span class="package-duration">3 MONTHS PASS</span>
-                <h3 class="package-name">QUARTERLY</h3>
-                <div class="package-price-wrap">
-                  <span class="package-price">3 MONTHS</span>
-                  <span class="package-period">/ save more</span>
-                </div>
-              </div>
-
-              <ul class="package-features">
-                <li class="package-feature-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Full Gym Floor & Machine Access</span>
-                </li>
-                <li class="package-feature-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Free Workout Routine Split Plan</span>
-                </li>
-                <li class="package-feature-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Body Assessment & Progress Tracking</span>
-                </li>
-                <li class="package-feature-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Trainer Form Check Assistance</span>
-                </li>
-              </ul>
-            </div>
-
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20the%203-Months%20Quarterly%20Package." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
-              ENQUIRE 3-MONTH PASS
-            </a>
-          </div>
-
-          <!-- Package 3: Half-Yearly (Popular) -->
-          <div class="package-card highlight-popular fade-in-up">
-            <span class="package-popular-badge">★ MOST POPULAR</span>
-            <div>
-              <div class="package-header">
-                <span class="package-duration">6 MONTHS PASS</span>
+                <span class="package-duration">6 MONTHS PLAN</span>
                 <h3 class="package-name">TRANSFORM</h3>
                 <div class="package-price-wrap">
-                  <span class="package-price">6 MONTHS</span>
-                  <span class="package-period">/ transformation</span>
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹6,000</span>
+                    <span class="package-discount-pill">SAVE ₹1,000</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹5,000</span>
+                    <span class="package-period">/ 6 months</span>
+                  </div>
                 </div>
               </div>
 
               <ul class="package-features">
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Full Access to All Zones & Equipment</span>
+                  <span>Unrestricted Heavy Iron & Machine Access</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Personalized Diet & Nutrition Guideline</span>
+                  <span>Muscle Building Nutrition Advice</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>1-on-1 Trainer Alignment Session</span>
+                  <span>Bi-Weekly Physique & Strength Reviews</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Bi-Weekly Physique Milestone Tracking</span>
+                  <span>Priority Floor Coach Support</span>
                 </li>
               </ul>
             </div>
 
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20the%206-Months%20Transform%20Package." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-primary" style="width: 100%;">
-              ENQUIRE 6-MONTH PASS
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%206-Months%20Strength%20Workout%20Plan%20(Rs.5000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              JOIN 6-MONTHS (₹5,000)
             </a>
           </div>
 
-          <!-- Package 4: Annual Elite -->
+          <!-- 12 Months Strength (Best Value) -->
           <div class="package-card fade-in-up">
+            <span class="package-popular-badge" style="background: var(--gold); color: #000;">★ BEST VALUE</span>
             <div>
               <div class="package-header">
-                <span class="package-duration">12 MONTHS PASS</span>
+                <span class="package-duration">12 MONTHS PLAN</span>
                 <h3 class="package-name">ANNUAL ELITE</h3>
                 <div class="package-price-wrap">
-                  <span class="package-price">1 YEAR</span>
-                  <span class="package-period">/ best value</span>
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹12,000</span>
+                    <span class="package-discount-pill">SAVE ₹2,000</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹10,000</span>
+                    <span class="package-period">/ year</span>
+                  </div>
                 </div>
               </div>
 
@@ -604,21 +655,282 @@
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Complete Custom Hypertrophy & Fat Loss Roadmap</span>
+                  <span>Full Year Hypertrophy Progression Roadmap</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Free Guest Workout Passes</span>
+                  <span>Free Guest Training Passes</span>
                 </li>
                 <li class="package-feature-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span>Dedicated Locker & Priority Floor Guidance</span>
+                  <span>Maximum Savings per month (~₹833/mo)</span>
                 </li>
               </ul>
             </div>
 
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20the%201-Year%20Annual%20Elite%20Package." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
-              ENQUIRE ANNUAL PASS
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%2012-Months%20Strength%20Workout%20Plan%20(Rs.10000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              JOIN ANNUAL (₹10,000)
+            </a>
+          </div>
+
+          <!-- Couple Package (12 Months) Strength -->
+          <div class="package-card package-card-couple fade-in-up">
+            <span class="package-popular-badge" style="background: #E11D48;">👥 COUPLE SPECIAL (12 MO)</span>
+            <div>
+              <div class="package-header">
+                <span class="package-duration">12 MONTHS COUPLE PLAN</span>
+                <h3 class="package-name">COUPLE PASS</h3>
+                <div class="package-price-wrap">
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹24,000</span>
+                    <span class="package-discount-pill" style="background: rgba(225, 29, 72, 0.2); color: #FDA4AF; border-color: rgba(225, 29, 72, 0.4);">SAVE ₹6,000</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹18,000</span>
+                    <span class="package-period">/ 2 persons (1 yr)</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Full Year Membership for 2 Persons</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Access to Both Branches across Karnataka</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Joint Goal Tracking & Workout Routines</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Massive ₹6,000 Flat Bundle Discount</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%2012-Months%20Couple%20Package%20for%20Strength%20Workout%20(Rs.18000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              JOIN COUPLE PLAN (₹18,000)
+            </a>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             TAB 2: CARDIO + STRENGTH PACKAGES
+             ========================================== -->
+        <div class="packages-grid package-tab-content" id="packageGridCardio" style="display: none;">
+          <!-- 1 Month Cardio + Strength -->
+          <div class="package-card fade-in-up">
+            <div>
+              <div class="package-header">
+                <span class="package-duration">1 MONTH PLAN</span>
+                <h3 class="package-name">STARTER COMBO</h3>
+                <div class="package-price-wrap">
+                  <span class="package-price">₹1,500</span>
+                  <span class="package-period">/ month</span>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Full Free Weight & Strength Machine Access</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Dedicated Cardio Zone & Treadmills</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Spin Bikes, Ellipticals & Stamina Training</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Floor Coach Support & Locker Facility</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%201-Month%20Cardio%20%2B%20Strength%20Plan%20(Rs.1500)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              ENQUIRE 1-MONTH (₹1,500)
+            </a>
+          </div>
+
+          <!-- 3 Months Cardio + Strength (Popular) -->
+          <div class="package-card highlight-popular fade-in-up">
+            <span class="package-popular-badge">★ POPULAR COMBO</span>
+            <div>
+              <div class="package-header">
+                <span class="package-duration">3 MONTHS PLAN</span>
+                <h3 class="package-name">POWER COMBO</h3>
+                <div class="package-price-wrap">
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹4,500</span>
+                    <span class="package-discount-pill">SAVE ₹500</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹4,000</span>
+                    <span class="package-period">/ 3 months</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Full Cardio Floor + Iron Strength Zone</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Fat Loss + Hypertrophy Hybrid Split</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Body Conditioning & Stamina Tracking</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Trainer Form Check & Diet Advice</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%203-Months%20Cardio%20%2B%20Strength%20Plan%20(Rs.4000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-primary" style="width: 100%;">
+              JOIN 3-MONTHS (₹4,000)
+            </a>
+          </div>
+
+          <!-- 6 Months Cardio + Strength -->
+          <div class="package-card fade-in-up">
+            <div>
+              <div class="package-header">
+                <span class="package-duration">6 MONTHS PLAN</span>
+                <h3 class="package-name">BURN & BUILD</h3>
+                <div class="package-price-wrap">
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹9,000</span>
+                    <span class="package-discount-pill">SAVE ₹1,000</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹8,000</span>
+                    <span class="package-period">/ 6 months</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Unrestricted Access to Cardio & Strength Floors</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Comprehensive Fat Loss & Toning Guideline</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Bi-Weekly Body Measurement Assessments</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Dedicated Locker & High Priority Coaching</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%206-Months%20Cardio%20%2B%20Strength%20Plan%20(Rs.8000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              JOIN 6-MONTHS (₹8,000)
+            </a>
+          </div>
+
+          <!-- 12 Months Cardio + Strength (Best Value) -->
+          <div class="package-card fade-in-up">
+            <span class="package-popular-badge" style="background: var(--gold); color: #000;">★ BEST VALUE</span>
+            <div>
+              <div class="package-header">
+                <span class="package-duration">12 MONTHS PLAN</span>
+                <h3 class="package-name">TOTAL ELITE</h3>
+                <div class="package-price-wrap">
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹18,000</span>
+                    <span class="package-discount-pill">SAVE ₹3,000</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹15,000</span>
+                    <span class="package-period">/ year</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Dual Branch Access (Chikkaballapur & Shidlaghatta)</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Complete Cardio + Hypertrophy Transformation</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Free Guest Passes & Priority Floor Support</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Maximum Savings (~₹1,250/mo all inclusive)</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%2012-Months%20Cardio%20%2B%20Strength%20Plan%20(Rs.15000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              JOIN ANNUAL (₹15,000)
+            </a>
+          </div>
+
+          <!-- Couple Package (12 Months) Cardio + Strength -->
+          <div class="package-card package-card-couple fade-in-up">
+            <span class="package-popular-badge" style="background: #E11D48;">👥 COUPLE SPECIAL (12 MO)</span>
+            <div>
+              <div class="package-header">
+                <span class="package-duration">12 MONTHS COUPLE PLAN</span>
+                <h3 class="package-name">COUPLE COMBO</h3>
+                <div class="package-price-wrap">
+                  <div class="price-strikethrough-group">
+                    <span class="price-strikethrough">₹36,000</span>
+                    <span class="package-discount-pill" style="background: rgba(225, 29, 72, 0.2); color: #FDA4AF; border-color: rgba(225, 29, 72, 0.4);">SAVE ₹8,000</span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; gap: 4px;">
+                    <span class="package-price">₹28,000</span>
+                    <span class="package-period">/ 2 persons (1 yr)</span>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="package-features">
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Full Cardio + Strength Access for 2 Persons</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>All-Access across Chikkaballapur & Shidlaghatta</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Dual Custom Workout & Cardio Split Plans</span>
+                </li>
+                <li class="package-feature-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Huge ₹8,000 Direct Bundle Discount</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20want%20to%20join%20the%2012-Months%20Couple%20Package%20for%20Cardio%20%2B%20Strength%20(Rs.28000)." target="_blank" rel="noopener noreferrer" class="btn-cult btn-cult-outline" style="width: 100%;">
+              JOIN COUPLE COMBO (₹28,000)
             </a>
           </div>
         </div>
@@ -664,7 +976,7 @@
                 </span>
                 <span class="branch-live-status" id="chikkaLiveStatus">
                   <span class="status-indicator"></span>
-                  OPEN TODAY • UNTIL 10:00 PM
+                  OPEN 4:00 AM – 10:00 PM CONTINUOUSLY
                 </span>
               </div>
               <h3 class="branch-card-title">INTENSE WORLD – MAIN BRANCH</h3>
@@ -719,7 +1031,9 @@
                 </div>
                 <div class="branch-info-content" style="width: 100%;">
                   <h5>Operating Schedule</h5>
-                  <p>Open daily (Monday – Sunday) until <strong>10:00 PM</strong></p>
+                  <ul class="branch-hours-list">
+                    <li class="branch-hours-item"><span>Monday – Sunday:</span> <span style="color: var(--success); font-weight: 700;">4:00 AM – 10:00 PM (Continuous)</span></li>
+                  </ul>
                 </div>
               </div>
 
@@ -761,7 +1075,7 @@
                 </span>
                 <span class="branch-live-status" id="shidLiveStatus">
                   <span class="status-indicator"></span>
-                  MON–SAT: 5:00 AM – 10:00 PM
+                  MON–SAT: 5AM–10AM & 5PM–10PM
                 </span>
               </div>
               <h3 class="branch-card-title">INTENSE WORLD – SHIDLAGHATTA</h3>
@@ -823,10 +1137,11 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
                 <div class="branch-info-content" style="width: 100%;">
-                  <h5>Opening Hours</h5>
+                  <h5>Opening Hours (Split Schedule)</h5>
                   <ul class="branch-hours-list">
-                    <li class="branch-hours-item"><span>Monday – Saturday:</span> <span>5:00 AM – 10:00 PM</span></li>
-                    <li class="branch-hours-item highlight-closed"><span>Sunday:</span> <span>Closed</span></li>
+                    <li class="branch-hours-item"><span>Morning Slot:</span> <span style="font-weight: 700; color: #FFFFFF;">5:00 AM – 10:00 AM</span></li>
+                    <li class="branch-hours-item"><span>Evening Slot:</span> <span style="font-weight: 700; color: #FFFFFF;">5:00 PM – 10:00 PM</span></li>
+                    <li class="branch-hours-item highlight-closed"><span>Sunday:</span> <span style="font-weight: 700;">Closed</span></li>
                   </ul>
                 </div>
               </div>
@@ -850,7 +1165,6 @@
                   📞 CALL SHIDLAGHATTA (070194 74149)
                 </a>
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1108,12 +1422,12 @@
             <div>
               <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.25rem; font-weight: 900;">MAIN BRANCH — CHIKKABALLAPUR</p>
               <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); line-height: 1.4;">Jeevanjaneyaswamy Temple, Kote, Chikkaballapur 562101</p>
-              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+918618932114">+91 86189 32114</a> • Open until 10 PM</p>
+              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+918618932114">+91 86189 32114</a> • Open 4:00 AM – 10:00 PM (Daily)</p>
             </div>
             <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
               <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 0.25rem; font-weight: 900;">SECOND BRANCH — SHIDLAGHATTA</p>
               <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); line-height: 1.4;">Ward No. 23, Chintamani Main Rd, Opp. Kempegowda Statue 562105</p>
-              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:07019474149">070194 74149</a> • Mon–Sat 5AM–10PM (Sun Closed)</p>
+              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:07019474149">070194 74149</a> • Mon–Sat: 5AM–10AM & 5PM–10PM (Sun Closed)</p>
             </div>
           </div>
         </div>
