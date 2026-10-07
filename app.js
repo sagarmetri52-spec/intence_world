@@ -95,4 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 6. Branch Gallery Thumbnail Switcher (Shidlaghatta Photo Gallery)
+  const thumbBtns = document.querySelectorAll('.branch-thumb-btn');
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetSrc = this.getAttribute('data-img');
+      const gallery = this.closest('.branch-gallery');
+      if (gallery) {
+        const mainImg = gallery.querySelector('.branch-gallery-main img');
+        if (mainImg && targetSrc) {
+          mainImg.style.opacity = '0.3';
+          setTimeout(() => {
+            mainImg.src = targetSrc;
+            mainImg.style.opacity = '1';
+          }, 120);
+        }
+        gallery.querySelectorAll('.branch-thumb-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
 });
