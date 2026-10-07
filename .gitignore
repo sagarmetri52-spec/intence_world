@@ -1,0 +1,15 @@
+# Binaries and archives
+cloudflared.exe
+*.exe
+*.zip
+*.tar.gz
+
+# Local server & temp files
+*.ps1
+live_url.txt
+tiiny_result.json
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+.idea/
