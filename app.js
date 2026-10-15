@@ -2,21 +2,30 @@
 // Pure vanilla JavaScript engineered for high-speed responsiveness, accessibility & flawless interactions
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Header scroll blur & dimension transition
+  // 1. Header scroll blur & dimension transition (optimized with rAF to eliminate forced reflow)
   const header = document.getElementById('siteHeader');
+  let headerTicking = false;
   
-  function handleHeaderScroll() {
+  function updateHeaderState() {
     if (!header) return;
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScroll = window.scrollY || window.pageYOffset || 0;
     if (currentScroll > 30) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
+    headerTicking = false;
+  }
+
+  function handleHeaderScroll() {
+    if (!headerTicking) {
+      requestAnimationFrame(updateHeaderState);
+      headerTicking = true;
+    }
   }
 
   window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-  handleHeaderScroll();
+  updateHeaderState();
 
   // 2. Mobile Drawer Navigation & Touch Handling
   const mobileToggle = document.getElementById('mobileToggle');
@@ -157,10 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Active Navigation Link Highlighter on Scroll
+  // 6. Active Navigation Link Highlighter on Scroll (throttled with rAF)
   const trackedSections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset + 140;
+  let navTicking = false;
+
+  function updateNavHighlight() {
+    const scrollY = (window.scrollY || window.pageYOffset || 0) + 140;
     trackedSections.forEach(current => {
       const sectionHeight = current.offsetHeight;
       const sectionTop = current.offsetTop;
@@ -176,6 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileLink) mobileLink.classList.remove('active');
       }
     });
+    navTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!navTicking) {
+      requestAnimationFrame(updateNavHighlight);
+      navTicking = true;
+    }
   }, { passive: true });
 
   // 7. Branch Gallery Thumbnail Switcher
@@ -267,8 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
   packageTabBtns.forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
-      packageTabBtns.forEach(b => b.classList.remove('active'));
+      packageTabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
       const tab = this.getAttribute('data-package-tab');
 
       if (tab === 'strength') {

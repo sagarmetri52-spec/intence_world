@@ -120,6 +120,11 @@
   }
   </script>
 
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -195,8 +200,9 @@
          ========================================================== -->
     <section class="hero-section" id="home">
       <div class="hero-video-wrap">
-        <video autoplay muted loop playsinline class="hero-video" preload="auto">
+        <video autoplay muted loop playsinline class="hero-video" preload="metadata" aria-label="Intense World Gym athletic training footage background">
           <source src="assets/hero-bg-v2.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English" default>
         </video>
         <div class="hero-gradient-left"></div>
         <div class="hero-gradient-vertical"></div>
@@ -425,10 +431,10 @@
           <div class="program-card-box fade-in-up">
             <div>
               <span class="program-type-tag">FOUNDATION</span>
-              <h4>STRENGTH TRAINING</h4>
+              <h3>STRENGTH TRAINING</h3>
               <p>Build compound strength, improve physical performance, and develop a solid, injury-resistant muscular foundation.</p>
             </div>
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Strength%20Training." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Strength%20Training." target="_blank" rel="noopener noreferrer" aria-label="Enquire about Strength Training Program on WhatsApp">
               ENQUIRE ON WHATSAPP →
             </a>
           </div>
@@ -436,10 +442,10 @@
           <div class="program-card-box fade-in-up">
             <div>
               <span class="program-type-tag">HYPERTROPHY</span>
-              <h4>MUSCLE BUILDING</h4>
+              <h3>MUSCLE BUILDING</h3>
               <p>Structured resistance workouts focused on muscle development, progressive overload, and consistent physique growth.</p>
             </div>
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Muscle%20Building." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Muscle%20Building." target="_blank" rel="noopener noreferrer" aria-label="Enquire about Muscle Building Program on WhatsApp">
               ENQUIRE ON WHATSAPP →
             </a>
           </div>
@@ -447,10 +453,10 @@
           <div class="program-card-box fade-in-up">
             <div>
               <span class="program-type-tag">ENDURANCE</span>
-              <h4>FITNESS & CONDITIONING</h4>
+              <h3>FITNESS & CONDITIONING</h3>
               <p>Improve cardiovascular endurance, functional mobility, overall stamina, and everyday physical athletic performance.</p>
             </div>
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Fitness%20and%20Conditioning." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Fitness%20and%20Conditioning." target="_blank" rel="noopener noreferrer" aria-label="Enquire about Fitness and Conditioning Program on WhatsApp">
               ENQUIRE ON WHATSAPP →
             </a>
           </div>
@@ -458,10 +464,10 @@
           <div class="program-card-box fade-in-up">
             <div>
               <span class="program-type-tag">COACHING</span>
-              <h4>PERSONAL TRAINING</h4>
+              <h3>PERSONAL TRAINING</h3>
               <p>Trainer-supported workouts for members who want dedicated coaching, personalized form checks, and direct guidance.</p>
             </div>
-            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Personal%20Training." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20am%20interested%20in%20Personal%20Training." target="_blank" rel="noopener noreferrer" aria-label="Enquire about Personal Training Program on WhatsApp">
               ENQUIRE ON WHATSAPP →
             </a>
           </div>
@@ -497,11 +503,11 @@
           </div>
 
           <!-- Package Category Selector Tabs -->
-          <div class="package-plan-switcher" role="tablist">
-            <button type="button" class="package-tab-btn active" id="tabBtnStrength" data-package-tab="strength">
+          <div class="package-plan-switcher" role="tablist" aria-label="Membership Package Categories">
+            <button type="button" class="package-tab-btn active" id="tabBtnStrength" data-package-tab="strength" role="tab" aria-selected="true" aria-controls="packageGridStrength">
               💪 STRENGTH WORKOUT
             </button>
-            <button type="button" class="package-tab-btn" id="tabBtnCardio" data-package-tab="cardio">
+            <button type="button" class="package-tab-btn" id="tabBtnCardio" data-package-tab="cardio" role="tab" aria-selected="false" aria-controls="packageGridCardio">
               ⚡ CARDIO + STRENGTH
             </button>
           </div>
@@ -510,7 +516,7 @@
         <!-- ==========================================
              TAB 1: STRENGTH WORKOUT PACKAGES
              ========================================== -->
-        <div class="packages-grid package-tab-content active" id="packageGridStrength">
+        <div class="packages-grid package-tab-content active" id="packageGridStrength" role="tabpanel" aria-labelledby="tabBtnStrength">
           <!-- 1 Month Strength -->
           <div class="package-card fade-in-up">
             <div>
@@ -727,7 +733,7 @@
         <!-- ==========================================
              TAB 2: CARDIO + STRENGTH PACKAGES
              ========================================== -->
-        <div class="packages-grid package-tab-content" id="packageGridCardio" style="display: none;">
+        <div class="packages-grid package-tab-content" id="packageGridCardio" role="tabpanel" aria-labelledby="tabBtnCardio" style="display: none;">
           <!-- 1 Month Cardio + Strength -->
           <div class="package-card fade-in-up">
             <div>
@@ -963,7 +969,7 @@
           </p>
 
           <!-- Branch Filter Controls -->
-          <div class="branch-tab-control" role="tablist">
+          <div class="branch-tab-control" role="group" aria-label="Filter Gym Branches">
             <button type="button" class="branch-tab-btn active" data-filter="all">⚡ ALL LOCATIONS</button>
             <button type="button" class="branch-tab-btn" data-filter="chikkaballapur">📍 1ST BRANCH — CHIKKABALLAPUR</button>
             <button type="button" class="branch-tab-btn" data-filter="shidlaghatta">📍 2ND BRANCH — SHIDLAGHATTA</button>
@@ -1019,7 +1025,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
                 <div class="branch-info-content">
-                  <h5>Location & Address</h5>
+                  <h4>Location & Address</h4>
                   <address>
                     Jeevanjaneyaswamy Temple, Kote<br>
                     Chikkaballapur, Karnataka 562101
@@ -1033,7 +1039,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <div class="branch-info-content">
-                  <h5>1st Branch Phone</h5>
+                  <h4>1st Branch Phone</h4>
                   <p><a href="tel:+919591792999">+91 95917 92999</a></p>
                 </div>
               </div>
@@ -1043,7 +1049,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 </div>
                 <div class="branch-info-content">
-                  <h5>WhatsApp Support</h5>
+                  <h4>WhatsApp Support</h4>
                   <p><a href="https://wa.me/919591792999?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%201st%20Branch%20(Chikkaballapur)." target="_blank" rel="noopener noreferrer">+91 95917 92999</a></p>
                 </div>
               </div>
@@ -1053,7 +1059,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
                 <div class="branch-info-content" style="width: 100%;">
-                  <h5>Operating Schedule</h5>
+                  <h4>Operating Schedule</h4>
                   <ul class="branch-hours-list">
                     <li class="branch-hours-item"><span>Monday – Saturday:</span> <span style="color: var(--success); font-weight: 700;">4:00 AM – 10:00 PM (Continuous)</span></li>
                     <li class="branch-hours-item highlight-closed"><span>Sunday:</span> <span style="font-weight: 700;">Closed</span></li>
@@ -1136,7 +1142,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
                 <div class="branch-info-content">
-                  <h5>Location & Address</h5>
+                  <h4>Location & Address</h4>
                   <address>
                     Ward No. 23, Chintamani Main Road<br>
                     Opposite to Kempegowda Statue<br>
@@ -1151,7 +1157,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <div class="branch-info-content">
-                  <h5>2nd Branch Direct Phone</h5>
+                  <h4>2nd Branch Direct Phone</h4>
                   <p><a href="tel:+917795256416">+91 77952 56416</a></p>
                 </div>
               </div>
@@ -1161,7 +1167,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 </div>
                 <div class="branch-info-content">
-                  <h5>WhatsApp Support</h5>
+                  <h4>WhatsApp Support</h4>
                   <p><a href="https://wa.me/917795256416?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%202nd%20Branch%20(Shidlaghatta)." target="_blank" rel="noopener noreferrer">+91 77952 56416</a></p>
                 </div>
               </div>
@@ -1171,7 +1177,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
                 <div class="branch-info-content" style="width: 100%;">
-                  <h5>Opening Hours (Split Schedule)</h5>
+                  <h4>Opening Hours (Split Schedule)</h4>
                   <ul class="branch-hours-list">
                     <li class="branch-hours-item"><span>Monday – Saturday (Morning Session):</span> <span style="font-weight: 700; color: var(--accent);">5:00 AM – 10:00 AM</span></li>
                     <li class="branch-hours-item"><span>Monday – Saturday (Evening Session):</span> <span style="font-weight: 700; color: var(--accent);">5:00 PM – 10:00 PM</span></li>
@@ -1306,7 +1312,7 @@
               <div class="reviewer-meta-left">
                 <div class="reviewer-initial">M</div>
                 <div>
-                  <h5>Verified Member</h5>
+                  <h3>Verified Member</h3>
                   <span>Google Review • 5.0★</span>
                 </div>
               </div>
@@ -1320,7 +1326,7 @@
               <div class="reviewer-meta-left">
                 <div class="reviewer-initial">G</div>
                 <div>
-                  <h5>Verified Member</h5>
+                  <h3>Verified Member</h3>
                   <span>Google Review • 5.0★</span>
                 </div>
               </div>
@@ -1334,7 +1340,7 @@
               <div class="reviewer-meta-left">
                 <div class="reviewer-initial">S</div>
                 <div>
-                  <h5>Verified Member</h5>
+                  <h3>Verified Member</h3>
                   <span>Google Review • 5.0★</span>
                 </div>
               </div>
@@ -1348,7 +1354,7 @@
               <div class="reviewer-meta-left">
                 <div class="reviewer-initial">K</div>
                 <div>
-                  <h5>Verified Member</h5>
+                  <h3>Verified Member</h3>
                   <span>Google Review • 5.0★</span>
                 </div>
               </div>
@@ -1362,7 +1368,7 @@
               <div class="reviewer-meta-left">
                 <div class="reviewer-initial">R</div>
                 <div>
-                  <h5>Verified Member</h5>
+                  <h3>Verified Member</h3>
                   <span>Google Review • 5.0★</span>
                 </div>
               </div>
@@ -1390,7 +1396,7 @@
   <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Preview">
     <div class="lightbox-content">
       <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">✕</button>
-      <img id="lightboxImg" src="" alt="Full Resolution Preview">
+      <img id="lightboxImg" src="assets/chikkaballapur-1.jpg" alt="Full Resolution Preview" width="800" height="600">
       <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
   </div>
@@ -1398,18 +1404,18 @@
   <!-- ==========================================================
        FLOATING WHATSAPP BUTTON
        ========================================================== -->
-  <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%20gym%20and%20membership." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-cult" aria-label="Chat on WhatsApp with Intense World Gym">
+  <a href="https://wa.me/919591792999?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%20gym%20and%20membership." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-cult" aria-label="Chat on WhatsApp with Intense World Gym">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     <span>Chat with Us</span>
   </a>
 
   <!-- Mobile Bottom Action Bar -->
   <nav class="mobile-bottom-bar-cult" aria-label="Mobile Quick Actions">
-    <a href="tel:+918618932114" class="mobile-bottom-btn">
+    <a href="tel:+919591792999" class="mobile-bottom-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
       <span>Call Main</span>
     </a>
-    <a href="https://wa.me/918618932114?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%20gym%20and%20membership." target="_blank" rel="noopener noreferrer" class="mobile-bottom-btn wa-highlight">
+    <a href="https://wa.me/919591792999?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%20gym%20and%20membership." target="_blank" rel="noopener noreferrer" class="mobile-bottom-btn wa-highlight">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
       <span>WhatsApp</span>
     </a>
@@ -1433,7 +1439,7 @@
               <span class="brand-subtitle" style="color: rgba(255,255,255,0.45);">EVERY REP COUNTS • EST. 2024</span>
             </div>
           </a>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; max-width: 380px; line-height: 1.6; margin-bottom: 2rem;">
+          <p style="color: #cbd5e1; font-size: 0.92rem; max-width: 380px; line-height: 1.6; margin-bottom: 2rem;">
             Chikkaballapur & Shidlaghatta’s benchmark for serious resistance training, Olympic lifting, hypertrophy, and discipline.
           </p>
           <a href="#branches" class="btn-cult btn-cult-outline" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">
@@ -1444,15 +1450,15 @@
         <div>
           <h4 style="font-size: 11px; font-weight: 900; letter-spacing: 0.25em; color: var(--accent); margin-bottom: 2rem;">NAVIGATION</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
-            <li><a href="#home" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Home</a></li>
-            <li><a href="#philosophy" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Philosophy</a></li>
-            <li><a href="#facility" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">The Facility</a></li>
-            <li><a href="#programs" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Programs</a></li>
-            <li><a href="#packages" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Packages</a></li>
-            <li><a href="#branches" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Our Branches</a></li>
-            <li><a href="trainers.html" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Trainers</a></li>
-            <li><a href="#calculator" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Goal Finder</a></li>
-            <li><a href="#reviews" style="color: var(--text-secondary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Verified Reviews</a></li>
+            <li><a href="#home" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Home</a></li>
+            <li><a href="#philosophy" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Philosophy</a></li>
+            <li><a href="#facility" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">The Facility</a></li>
+            <li><a href="#programs" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Programs</a></li>
+            <li><a href="#packages" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Packages</a></li>
+            <li><a href="#branches" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Our Branches</a></li>
+            <li><a href="trainers.html" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Trainers</a></li>
+            <li><a href="#calculator" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Goal Finder</a></li>
+            <li><a href="#reviews" style="color: #cbd5e1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Verified Reviews</a></li>
           </ul>
         </div>
 
@@ -1461,13 +1467,13 @@
           <div style="display: flex; flex-direction: column; gap: 1.5rem;">
             <div>
               <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.25rem; font-weight: 900;">1ST BRANCH — CHIKKABALLAPUR (MAIN HQ)</p>
-              <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); line-height: 1.4;">Jeevanjaneyaswamy Temple, Kote, Chikkaballapur 562101</p>
-              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+919591792999">+91 95917 92999</a> • Mon–Sat: 4:00 AM – 10:00 PM (Sun Closed)</p>
+              <p style="font-size: 0.85rem; font-weight: 600; color: #cbd5e1; line-height: 1.4;">Jeevanjaneyaswamy Temple, Kote, Chikkaballapur 562101</p>
+              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+919591792999" style="color: #FF7A38; text-decoration: underline; font-weight: 800;">+91 95917 92999</a> • Mon–Sat: 4:00 AM – 10:00 PM (Sun Closed)</p>
             </div>
             <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
               <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 0.25rem; font-weight: 900;">2ND BRANCH — SHIDLAGHATTA</p>
-              <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); line-height: 1.4;">Ward No. 23, Chintamani Main Rd, Opp. Kempegowda Statue 562105</p>
-              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+917795256416">+91 77952 56416</a> • Mon–Sat: 5:00 AM–10:00 AM & 5:00 PM–10:00 PM (Sun Closed)</p>
+              <p style="font-size: 0.85rem; font-weight: 600; color: #cbd5e1; line-height: 1.4;">Ward No. 23, Chintamani Main Rd, Opp. Kempegowda Statue 562105</p>
+              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+917795256416" style="color: #FF7A38; text-decoration: underline; font-weight: 800;">+91 77952 56416</a> • Mon–Sat: 5:00 AM–10:00 AM & 5:00 PM–10:00 PM (Sun Closed)</p>
             </div>
           </div>
         </div>
