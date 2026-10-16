@@ -123,10 +123,10 @@
   <!-- Google Fonts Preconnect & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
 
@@ -200,7 +200,7 @@
          ========================================================== -->
     <section class="hero-section" id="home">
       <div class="hero-video-wrap">
-        <video autoplay muted loop playsinline class="hero-video" preload="metadata" aria-label="Intense World Gym athletic training footage background">
+        <video autoplay muted loop playsinline class="hero-video" preload="none" aria-label="Intense World Gym athletic training footage background">
           <source src="assets/hero-bg-v2.mp4" type="video/mp4">
           <track kind="captions" srclang="en" label="English" default>
         </video>
@@ -1040,7 +1040,7 @@
                 </div>
                 <div class="branch-info-content">
                   <h4>1st Branch Phone</h4>
-                  <p><a href="tel:+919591792999">+91 95917 92999</a></p>
+                  <p><a href="tel:+919591792999" aria-label="Call Chikkaballapur Branch at +91 95917 92999">+91 95917 92999</a></p>
                 </div>
               </div>
 
@@ -1050,7 +1050,7 @@
                 </div>
                 <div class="branch-info-content">
                   <h4>WhatsApp Support</h4>
-                  <p><a href="https://wa.me/919591792999?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%201st%20Branch%20(Chikkaballapur)." target="_blank" rel="noopener noreferrer">+91 95917 92999</a></p>
+                  <p><a href="https://wa.me/919591792999?text=Hello%20Intense%20World%2C%20I%20would%20like%20to%20know%20more%20about%20the%201st%20Branch%20(Chikkaballapur)." target="_blank" rel="noopener noreferrer" aria-label="Message Chikkaballapur Branch on WhatsApp at +91 95917 92999">+91 95917 92999</a></p>
                 </div>
               </div>
 
@@ -1396,7 +1396,7 @@
   <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Preview">
     <div class="lightbox-content">
       <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">✕</button>
-      <img id="lightboxImg" src="assets/chikkaballapur-1.jpg" alt="Full Resolution Preview" width="800" height="600">
+      <img id="lightboxImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3C/svg%3E" alt="Full Resolution Preview" width="800" height="600" loading="lazy">
       <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
   </div>
@@ -1468,12 +1468,12 @@
             <div>
               <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.25rem; font-weight: 900;">1ST BRANCH — CHIKKABALLAPUR (MAIN HQ)</p>
               <p style="font-size: 0.85rem; font-weight: 600; color: #cbd5e1; line-height: 1.4;">Jeevanjaneyaswamy Temple, Kote, Chikkaballapur 562101</p>
-              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+919591792999" style="color: #FF7A38; text-decoration: underline; font-weight: 800;">+91 95917 92999</a> • Mon–Sat: 4:00 AM – 10:00 PM (Sun Closed)</p>
+              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+919591792999" aria-label="Direct phone call to Chikkaballapur headquarters" style="color: #FF7A38; text-decoration: underline; font-weight: 800;">+91 95917 92999</a> • Mon–Sat: 4:00 AM – 10:00 PM (Sun Closed)</p>
             </div>
             <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
               <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 0.25rem; font-weight: 900;">2ND BRANCH — SHIDLAGHATTA</p>
               <p style="font-size: 0.85rem; font-weight: 600; color: #cbd5e1; line-height: 1.4;">Ward No. 23, Chintamani Main Rd, Opp. Kempegowda Statue 562105</p>
-              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+917795256416" style="color: #FF7A38; text-decoration: underline; font-weight: 800;">+91 77952 56416</a> • Mon–Sat: 5:00 AM–10:00 AM & 5:00 PM–10:00 PM (Sun Closed)</p>
+              <p style="font-size: 0.82rem; color: #FFFFFF; font-weight: 700; margin-top: 0.35rem;">📞 Call: <a href="tel:+917795256416" aria-label="Direct phone call to Shidlaghatta branch" style="color: #FF7A38; text-decoration: underline; font-weight: 800;">+91 77952 56416</a> • Mon–Sat: 5:00 AM–10:00 AM & 5:00 PM–10:00 PM (Sun Closed)</p>
             </div>
           </div>
         </div>

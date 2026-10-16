@@ -166,29 +166,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Active Navigation Link Highlighter on Scroll (throttled with rAF)
+  // 6. Active Navigation Link Highlighter on Scroll (optimized: cached positions to eliminate forced reflow)
   const trackedSections = document.querySelectorAll('section[id]');
+  let sectionPositions = [];
   let navTicking = false;
+
+  function cacheSectionPositions() {
+    sectionPositions = Array.from(trackedSections).map(sec => ({
+      id: sec.getAttribute('id'),
+      top: sec.offsetTop,
+      height: sec.offsetHeight,
+      navLink: document.querySelector(`.desktop-nav a[href="#${sec.getAttribute('id')}"]`),
+      mobileLink: document.querySelector(`.mobile-nav-links a[href="#${sec.getAttribute('id')}"]`)
+    }));
+  }
 
   function updateNavHighlight() {
     const scrollY = (window.scrollY || window.pageYOffset || 0) + 140;
-    trackedSections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop;
-      const sectionId = current.getAttribute('id');
-      const navLink = document.querySelector(`.desktop-nav a[href="#${sectionId}"]`);
-      const mobileLink = document.querySelector(`.mobile-nav-links a[href="#${sectionId}"]`);
-      
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        if (navLink) navLink.classList.add('active');
-        if (mobileLink) mobileLink.classList.add('active');
+    sectionPositions.forEach(sec => {
+      if (scrollY >= sec.top && scrollY < sec.top + sec.height) {
+        if (sec.navLink) sec.navLink.classList.add('active');
+        if (sec.mobileLink) sec.mobileLink.classList.add('active');
       } else {
-        if (navLink) navLink.classList.remove('active');
-        if (mobileLink) mobileLink.classList.remove('active');
+        if (sec.navLink) sec.navLink.classList.remove('active');
+        if (sec.mobileLink) sec.mobileLink.classList.remove('active');
       }
     });
     navTicking = false;
   }
+
+  // Cache positions after DOM settles and on resize
+  setTimeout(cacheSectionPositions, 300);
+  window.addEventListener('resize', cacheSectionPositions, { passive: true });
 
   window.addEventListener('scroll', () => {
     if (!navTicking) {
